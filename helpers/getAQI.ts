@@ -5,7 +5,7 @@ export const getAQIColor = (aqi: number) => {
         case 2:
             return "#E3A008"
         case 3:
-            return "fb8500"
+            return "#fb8500"
         case 4:
             return "#E02424"
         case 5:
@@ -96,4 +96,16 @@ export const getPoluentColors = ({poluent, v}) => {
         }
     }
     
+}
+
+export const getMostsPoluent = (polutionData) => {
+    const limitColors = ["#E3A008", "#fb8500", "#E02424", "#5521B5"]
+    const poluents = []
+    for (const [key,value] of Object.entries(polutionData)) {
+        if (limitColors.includes(getPoluentColors({poluent: key, v: value}))) {
+            poluents.push({key, value})
+        }
+    }
+    return poluents
+
 }

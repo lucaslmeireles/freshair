@@ -22,7 +22,7 @@ export function WeatherCitiesNearBy({ city }) {
   }, []);
   return isLoaded ? (
     <>
-      <Text>Cities Nearby Me</Text>
+      <Text className="text-lg py-3">Cities Nearby Me</Text>
       <View className="flex-row overflow-auto w-full gap-3">
         {weatherCities !== undefined &&
           weatherCities.map((c) => {

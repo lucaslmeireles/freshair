@@ -28,10 +28,13 @@
     },
     "plugins": [
       "expo-router",
-      ["expo-location",
-      {
-        "locationWhenInUsePermission": "Allow FreshAir to access your location while you are using the app."
-      }]
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow FreshAir to access your location while you are using the app."
+        }
+      ],
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true

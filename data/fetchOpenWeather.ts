@@ -28,6 +28,7 @@ export type OpenWeatherResponse = {
         wind: number;
     };
     city: string;
+    aqi: number;
 
 }
 type OpenweatherCache = OpenWeatherResponse | null
@@ -35,9 +36,6 @@ type OpenweatherCache = OpenWeatherResponse | null
 let cacheRequest : OpenweatherCache = null
 
 export const fetchOpenweather = async (location : OpenWeatherLocation ) : Promise<OpenWeatherResponse | OpenweatherCache> => {
-    if (cacheRequest !== null) {
-        return cacheRequest
-    }
     
     const polutionData = await axios.get(
         `http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.coords.latitude}&lon=${location.coords.longitude}&appid=${process.env.EXPO_PUBLIC_OPENWEATHER_API}`
@@ -55,9 +53,10 @@ export const fetchOpenweather = async (location : OpenWeatherLocation ) : Promis
             pressure : weatherData.data.main.pressure,
             wind: weatherData.data.wind.speed
         },
-        city : weatherData.data.name
+        city : weatherData.data.name,
+        aqi: polutionData.data.list[0].main.aqi
     }
-    cacheRequest = data
+    
     return data
 
 }
