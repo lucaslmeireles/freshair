@@ -1,12 +1,3 @@
-function loopOverComponents(components: { [key: string]: number }) {
-const flatList = [];
-console.log(components);
-for (const [key, value] of Object.entries(components)) {
-flatList.push(
-<Text key={key}>
-{key} : {value}{" "}
-</Text>
-);
-}
-return flatList;
-}
+Fazer compoenente que explica AQI
+Fazer a calculadora de carbono
+Arrumar o negocio ali embaixo

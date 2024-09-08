@@ -17,15 +17,15 @@ export const getAQIColor = (aqi: number) => {
 export const getAQIName = (aqi: number) => {
     switch (aqi) {
         case 1:
-            return "Good"
+            return "Bom"
         case 2:
-            return "Fair"
+            return "Aceitavel"
         case 3: 
-            return "Moderate"
+            return "Moderado"
         case 4:
-            return "Poor"
+            return "Ruim"
         case 5:
-            return "Very Poor"
+            return "Muito Ruim"
     }
 }
 

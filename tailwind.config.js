@@ -16,6 +16,9 @@ module.exports = {
           "Inter_900Black,",
         ],
       },
+      backgroundImage: {
+        main: "url('/assets/images/main.jpg')",
+      },
     },
   },
   plugins: [],
